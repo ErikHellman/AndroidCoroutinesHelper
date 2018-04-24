@@ -1,0 +1,47 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'com.novoda.bintray-release'
+
+android {
+    compileSdkVersion 27
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 27
+        versionCode 1
+        versionName "0.0.1"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+kotlin {
+    experimental {
+        coroutines "enable"
+    }
+}
+
+publish {
+    userOrg = 'hellsoft'
+    groupId = 'se.hellsoft'
+    artifactId = 'coroutines-android-support'
+    publishVersion = '0.0.1'
+    desc = 'A set of extension functions for simpler asynchronous calls in Android development.'
+    website = 'https://github.com/ErikHellman/coroutines-android-support'
+}
+
+dependencies {
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    kapt "android.arch.lifecycle:compiler:1.1.1"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:0.22.5"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:0.22.5"
+}
