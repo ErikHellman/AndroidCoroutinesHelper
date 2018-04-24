@@ -22,7 +22,7 @@ internal val loaderContext: CoroutineContext by lazy {
 internal class CoroutineLifecycleListener(private val cancelEvent: Lifecycle.Event = Lifecycle.Event.ON_STOP,
                                           private val job: Job) : LifecycleObserver {
     @OnLifecycleEvent(Lifecycle.Event.ON_PAUSE)
-    fun pause(source: LifecycleOwner) = handleEvent(Lifecycle.Event.ON_PAUSE)
+    fun pause() = handleEvent(Lifecycle.Event.ON_PAUSE)
 
     @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
     fun stop() = handleEvent(Lifecycle.Event.ON_STOP)
