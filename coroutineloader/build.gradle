@@ -32,10 +32,10 @@ kotlin {
 publish {
     userOrg = 'hellsoft'
     groupId = 'se.hellsoft'
-    artifactId = 'coroutines-android-support'
+    artifactId = 'coroutines-android-helper'
     publishVersion = '0.0.1'
     desc = 'A set of extension functions for simpler asynchronous calls in Android development.'
-    website = 'https://github.com/ErikHellman/coroutines-android-support'
+    website = 'https://github.com/ErikHellman/AndroidCoroutinesHelper/tree/master'
 }
 
 dependencies {
